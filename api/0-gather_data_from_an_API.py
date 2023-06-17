@@ -1,12 +1,16 @@
 #!/usr/bin/python3
 """Script to request information using an API."""
+"""
+In this module I practically modify the the strings used 
+to retrieve the data.
+"""
+
+"""Imported libraries above."""
+
 
 import json
 import requests
 import sys
-"""Imported libraries above."""
-
-
 user_id = sys.argv[1]
 url = 'https://jsonplaceholder.typicode.com/user/' + user_id + '/todos'
 users = 'https://jsonplaceholder.typicode.com/users?id=' + user_id
@@ -16,7 +20,6 @@ users_names = requests.get(users)
 response = users_names.json()
 undone = 0
 done = 0
-
 
 for item in response:
     username = item['name']
