@@ -28,4 +28,4 @@ if __name__ == '__main__':
     for items in info:
         if items['completed'] is True:
             task = items['title']
-            print("\t {task}")
+            print(f"\t {task}")
