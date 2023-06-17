@@ -8,18 +8,16 @@ from sys import argv
 if __name__ == "__main__":
     userid = argv[1]
     url = 'https://jsonplaceholder.typicode.com/users'
-    todo = requests.get(f'{url}/{userid}/todos')
-    users = requests.get(f'{url}?id={userid}')
-    users_resp = users.json()
-    todo_resp = todo.json()
+    todo = requests.get(f'{url}/{userid}/todos').json()
+    users = requests.get(f'{url}?id={userid}').json()
 
-    for user in users_resp:
-        username = user['name']
+    for user in users:
+        username = user['username']
 
     with open(f'{userid}.csv', 'w', newline='') as file:
         writer = csv.writer(file, quoting=csv.QUOTE_ALL)
 
-        for item in todo_resp:
+        for item in todo:
             status = item['completed']
             task = item['title']
             writer.writerow([userid, username, status, task])
