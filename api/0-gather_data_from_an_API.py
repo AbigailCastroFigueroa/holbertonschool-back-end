@@ -23,7 +23,7 @@ if __name__ == '__main__':
         if items['completed'] is True:
             done += 1
         undone += 1
-    print(f"Employee {username} is done with tasks ({done}/{undone}):")
+    print(f"Employee {username} is done with tasks({done}/{undone}):")
 
     for items in info:
         if items['completed'] is True:
