@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Script to request information using an API."""
 
 import requests
 import json
